@@ -1,22 +1,20 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-import NotesApp from './components/NotesApp';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import AddNotePage from './components/AddNotePage';
+import HomePage from './components/HomePage';
 
-const App = () => {
+
+function App() {
   return (
-    <div>
-      <nav className="navbar navbar-light bg-light">
-        <div className="container d-flex justify-content-between align-items-center">
-          <span className="navbar-brand mb-0 h1">Keep My Notes</span>
-          <Link to="/add-note" className="btn btn-primary">
-            +
-          </Link>
-        </div>
-      </nav>
-      <NotesApp />
-    </div>
+    <Router>
+      <div>
+        <Routes>
+        <Route path="/" element={<HomePage />} />
+          <Route path="/add-note" element={<AddNotePage />} />
+        </Routes>
+      </div>
+    </Router>
   );
-};
+}
 
 export default App;
