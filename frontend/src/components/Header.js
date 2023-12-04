@@ -8,7 +8,7 @@ const Header = () => {
   const isHomePage = location.pathname === '/';
 
   return (
-    <div className="d-flex justify-content-between align-items-center p-3 bg-light">
+    <div className="d-flex justify-content-between align-items-center p-3 bg-light mb-5" style={{ border: '1px solid black' }}>
       <div className="logo">
         <img src={pencilLogo} alt="logo" height={40} />
       </div>
